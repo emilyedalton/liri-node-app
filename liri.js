@@ -22,8 +22,17 @@ case 'concert-this':
   break;
 
  case 'spotify-this-song':
-  spotify();
-  break;
+  if(value === 1)
+             {
+                 return 
+                 spotSearch.search({ type: 'track', query: 'The sign' });
+                 break;
+             }
+             else
+             {
+                 return spotify();
+                 break;
+             }
 
 
 case 'movie-this':
@@ -41,15 +50,24 @@ const concert = () => {
 }
 
 function spotify (){
+    console.log("I am the spotify function")
+
     spotSearch.search({ type: 'track', query: value }, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
-       
-        console.log("\nArtist: " + JSON.stringify(data.tracks.items[0].artists[0].name, null, 2) + "\n");
-         
+        //Artist(s) name
+        console.log("\nArtist: " + JSON.stringify(data.tracks.items[0].artists[0].name));
+         // song
+         console.log("\nSong Title: " + JSON.stringify(data.tracks.items[0].name));
+
+         // preview link
+         console.log("\nPreview Link: " + JSON.stringify(data.tracks.items[0].preview_url));
+
+         // album
+         console.log("\nAlbum Title: " + JSON.stringify(data.tracks.items[0].album.name));
+
       });
-    console.log("I am the spotify function")
     }
 // }
 
