@@ -1,6 +1,9 @@
 require("dotenv").config();
 var axios = require("axios");
 
+
+const spotifySearch = require("spotify");
+
 const keys = require("/Users/emilydalton/Desktop/working/liri-node-app/keys.js");
 
 
@@ -36,7 +39,14 @@ const concert = () => {
     console.log("I am the bands in town function")
 }
 
-const spotify = () => {
+function spotify (){
+    spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+       
+      console.log(data); 
+      });
     console.log("I am the spotify function")
 }
 
