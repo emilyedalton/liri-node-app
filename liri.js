@@ -7,7 +7,7 @@ const keys = require("/Users/emilydalton/Desktop/working/liri-node-app/keys.js")
 
 //Take in user input 
 const askLiri = process.argv[2];
-var value = process.argv[3];
+const value = process.argv[3];
 
 
 //Switch case will direct which function will get run 
@@ -47,9 +47,6 @@ console.log("I am the whatitSays function")
 function movie(){
 // const movie = () => {
 // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
-// ---------------------------------------------------------------------------------------------------------
-
-// Include the axios npm package (Don't forget to run "npm install axios" in this folder first!)
 
 // Store all of the arguments in an array
 var nodeArgs = process.argv;
