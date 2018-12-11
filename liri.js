@@ -22,17 +22,9 @@ case 'concert-this':
   break;
 
  case 'spotify-this-song':
-  if(value === 1)
-             {
-                 return 
-                 spotSearch.search({ type: 'track', query: 'The sign' });
-                 break;
-             }
-             else
-             {
-                 return spotify();
-                 break;
-             }
+ spotify();
+ break;
+             
 
 
 case 'movie-this':
@@ -45,11 +37,26 @@ case 'do-what-it-says':
 
 }
 
-const concert = () => {
+function concert (){
     console.log("I am the bands in town function")
+    
+    
+    var searchQ = 'https://rest.bandsintown.com/artists/' + value + '/events?app_id=codingbootcamp';
+    console.log(searchQ);
+    //Name of the venue
+    axios.get(searchQ).then(
+        function(response) {
+        for (var index = 0; index < response.length; index++) {
+
+    console.log(response[i].lineup);
+        }
+    //Venue location
+
+    //Date of the Event (use moment to format this as "MM/DD/YYYY")
+        });
 }
 
-function spotify (){
+function spotify(){
     console.log("I am the spotify function")
 
     spotSearch.search({ type: 'track', query: value }, function(err, data) {
@@ -69,6 +76,27 @@ function spotify (){
 
       });
     }
+
+    function AceofBass (){
+        console.log("I am the ace of bass function");
+    
+        spotSearch.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+            if (err) {
+              return console.log('Error occurred: ' + err);
+            }
+            //Artist(s) name
+            console.log("\nArtist: " + JSON.stringify(data.tracks.items[0].artists[0].name));
+             // song
+             console.log("\nSong Title: " + JSON.stringify(data.tracks.items[0].name));
+    
+             // preview link
+             console.log("\nPreview Link: " + JSON.stringify(data.tracks.items[0].preview_url));
+    
+             // album
+             console.log("\nAlbum Title: " + JSON.stringify(data.tracks.items[0].album.name));
+    
+          });
+        }
 // }
 
 // function whatitSays (){
@@ -78,16 +106,6 @@ function spotify (){
 function movie(){
 // const movie = () => {
 // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
-
-// Store all of the arguments in an array
-var nodeArgs = process.argv;
-
-// Create an empty variable for holding the movie name
-var movieName = "";
-
-// Loop through all the words in the node argument
-// And do a little for-loop magic to handle the inclusion of "+"s
-movieName=process.argv.slice(2).join(" ");
 
 
 // Then run a request with axios to the OMDB API with the movie specified
