@@ -11,7 +11,10 @@ var spotSearch = new spotifyReq(keys.spotify)
 
 //Take in user input 
 const askLiri = process.argv[2];
-const value = process.argv[3];
+// const value = process.argv[3];
+const value = process.argv.slice(3).join(' ');
+console.log(value);
+
 
 
 //Switch case will direct which function will get run 
@@ -26,7 +29,6 @@ case 'concert-this':
  break;
              
 
-
 case 'movie-this':
   movie();
   break;
@@ -38,16 +40,16 @@ case 'do-what-it-says':
 }
 
 function concert (){
-    console.log("I am the bands in town function")
-    
+
+console.log("I am the bands in town function")
     
     var searchQ = 'https://rest.bandsintown.com/artists/' + value + '/events?app_id=codingbootcamp';
     console.log(searchQ);
     //Name of the venue
     axios.get(searchQ).then(
-        function(response) {
-        for (var index = 0; index < response.length; index++) {
-
+        function(response,) {
+            
+     for (i = 0; i < response.length; i++) {
     console.log(response[i].lineup);
         }
     //Venue location
