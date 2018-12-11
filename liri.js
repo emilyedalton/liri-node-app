@@ -4,7 +4,7 @@ var axios = require("axios");
 
 var spotifyReq = require("node-spotify-api");
 
-var keys = require('./keys.js');
+var keys = require("./keys.js");
 
 var spotSearch = new spotifyReq(keys.spotify)
 
@@ -13,7 +13,6 @@ var spotSearch = new spotifyReq(keys.spotify)
 const askLiri = process.argv[2];
 // const value = process.argv[3];
 const value = process.argv.slice(3).join(' ');
-console.log(value);
 
 
 
@@ -47,11 +46,18 @@ console.log("I am the bands in town function")
     console.log(searchQ);
     //Name of the venue
     axios.get(searchQ).then(
-        function(response,) {
-            
-     for (i = 0; i < response.length; i++) {
-    console.log(response[i].lineup);
+        function(response) {
+
+            // console.log("length"+err.length);
+            // if (err) {
+            //     return console.log('Error occurred: ' + err);
+            //   }   
+
+            console.log("length"+response.data.length);
+     for (i = 0; i < response.data.length; i++) {
         }
+        console.log("This is the venue" + response.data[0].venue.name);
+
     //Venue location
 
     //Date of the Event (use moment to format this as "MM/DD/YYYY")
