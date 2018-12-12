@@ -26,18 +26,18 @@ function start() {
       spotify();
       break;
 
-    case 'play-ace':
-      AceofBass();
+    case 'play-nobody':
+      MrNobody();
+      break;
+
+    
+    case 'do-what-it-says':
+      whatitSays();
       break;
 
     case 'movie-this':
       movie();
       break;
-
-    case 'do-what-it-says':
-      whatitSays();
-      break;
-
   }
 }
 function concert() {
@@ -76,7 +76,7 @@ function spotify() {
       return console.log('Error occurred: ' + err);
     }
     //Artist(s) name
-    console.log("\nArtist: " + (data.tracks.items[0].artists[0].name));
+    console.log(`\nArtist:  \n${data.tracks.items[0].artists[0].name}`)
     // song
     console.log("\nSong Title: " + (data.tracks.items[0].name));
 
@@ -89,7 +89,44 @@ function spotify() {
   });
 }
 
-
+function movie() {
+    // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
+    
+    // Then run a request with axios to the OMDB API with the movie specified
+    var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
+    
+    
+    
+    // This line is just to help us debug against the actual URL.
+    console.log(queryUrl);
+  
+    axios.get(queryUrl).then(
+      function (response, error) {
+         
+                if (error) {
+                  return console.log("IAM AN error");
+                }
+  
+        //movie title
+        console.log("\nTitle: " + response.data.Title);
+        // release year 
+        console.log("\nRelease Year: " + response.data.Year);
+        //IMDB Rating
+        console.log("\nIMDB Rating: " + response.data.imdbRating);
+        //Rotten Tomatoes Rating of the movie.
+        console.log("\nRotten Tomatoes Rating:" + response.data.Ratings[1].Value);
+        //Country where the movie was produced.
+        console.log("\nCountry of Production: " + response.data.Country);
+        //Language of the movie.
+        console.log("\nLanguage: " + response.data.Language);
+        // Plot of the movie.
+        console.log("\nPlot: " + response.data.Plot);
+        //Actors in the movie.
+        console.log("\nActors: " + response.data.Actors);
+  
+  
+      });
+  }
 
 
 function whatitSays() {
@@ -129,41 +166,41 @@ function whatitSays() {
 
 
 
-function movie() {
-  // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
-  if (value === undefined)
-  movie(defaultFilm);
-  else
-  // Then run a request with axios to the OMDB API with the movie specified
-  var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
 
+
+function MrNobody(){{
+    // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
+    
+    // Then run a request with axios to the OMDB API with the movie specified
+    var queryUrl = "http://www.omdbapi.com/?t=" + defaultFilm + "&y=&plot=short&apikey=trilogy";
   
-  // This line is just to help us debug against the actual URL.
-  console.log(queryUrl);
-
-  axios.get(queryUrl).then(
-    function (response) {
-
-      //movie title
-      console.log("\nTitle: " + response.data.Title);
-      // release year 
-      console.log("\nRelease Year: " + response.data.Year);
-      //IMDB Rating
-      console.log("\nIMDB Rating: " + response.data.imdbRating);
-      //Rotten Tomatoes Rating of the movie.
-      console.log("\nRotten Tomatoes Rating:" + response.data.Ratings[1].Value);
-      //Country where the movie was produced.
-      console.log("\nCountry of Production: " + response.data.Country);
-      //Language of the movie.
-      console.log("\nLanguage: " + response.data.Language);
-      // Plot of the movie.
-      console.log("\nPlot: " + response.data.Plot);
-      //Actors in the movie.
-      console.log("\nActors: " + response.data.Actors);
-
-
-    });
-}
+    
+    // This line is just to help us debug against the actual URL.
+    console.log(queryUrl);
+  
+    axios.get(queryUrl).then(
+      function (response) {
+  
+        //movie title
+        console.log("\nTitle: " + response.data.Title);
+        // release year 
+        console.log("\nRelease Year: " + response.data.Year);
+        //IMDB Rating
+        console.log("\nIMDB Rating: " + response.data.imdbRating);
+        //Rotten Tomatoes Rating of the movie.
+        console.log("\nRotten Tomatoes Rating:" + response.data.Ratings[1].Value);
+        //Country where the movie was produced.
+        console.log("\nCountry of Production: " + response.data.Country);
+        //Language of the movie.
+        console.log("\nLanguage: " + response.data.Language);
+        // Plot of the movie.
+        console.log("\nPlot: " + response.data.Plot);
+        //Actors in the movie.
+        console.log("\nActors: " + response.data.Actors);
+  
+  
+      });
+  }}
 //In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
 //Make sure you append each command you run to the `log.txt` file. 
