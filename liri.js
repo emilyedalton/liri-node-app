@@ -29,15 +29,15 @@ function start() {
     case 'play-nobody':
       MrNobody();
       break;
-
+     
+      case 'movie-this':
+      movie();
+      break;
     
     case 'do-what-it-says':
       whatitSays();
       break;
-
-    case 'movie-this':
-      movie();
-      break;
+    
   }
 }
 function concert() {
