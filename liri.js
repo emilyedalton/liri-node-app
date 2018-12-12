@@ -56,10 +56,14 @@ function concert() {
       //Venue location
       console.log(`This is the venue: ${response.data[0].venue.name}`);
 
+      //Venue location
+
+      console.log(`This is the city and country of the venue: ${response.data[0].venue.city}, ${response.data[0].venue.country}`);
+
+
 
       //Date of the Event (use moment to format this as "MM/DD/YYYY")
       let concertDate = moment(response.data[0].datetime).format('YYYY-MM-DD')
-      console.log("dateTime: " + concertDate);
       console.log(`This is the date: ${concertDate}`);
 
     });
@@ -111,7 +115,7 @@ function whatitSays() {
     askLiri = dataArr[0];
     console.log("  new  askLiri " +     askLiri );
 
-     //reassigns global "value" to the search string from the random.txt
+     //Emily, re-assign global "value" to the search string from the random.txt
     value = dataArr[1];
     console.log("new value" + value);
 
