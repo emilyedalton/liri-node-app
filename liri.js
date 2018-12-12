@@ -1,7 +1,6 @@
 require("dotenv").config();
 var axios = require("axios");
-
-
+var moment = require("moment");
 var spotifyReq = require("node-spotify-api");
 
 var keys = require("./keys.js");
@@ -26,7 +25,10 @@ case 'concert-this':
  case 'spotify-this-song':
  spotify();
  break;
-             
+  
+ case 'play-ace':
+ AceofBass();
+ break;
 
 case 'movie-this':
   movie();
@@ -48,19 +50,22 @@ console.log("I am the bands in town function")
     axios.get(searchQ).then(
         function(response) {
 
-            // console.log("length"+err.length);
-            // if (err) {
-            //     return console.log('Error occurred: ' + err);
-            //   }   
+             
 
             console.log("length"+response.data.length);
      for (i = 0; i < response.data.length; i++) {
         }
-        console.log("This is the venue" + response.data[0].venue.name);
+        //Venue location
+        console.log(`This is the venue: ${response.data[0].venue.name}`);
 
-    //Venue location
+
+    
 
     //Date of the Event (use moment to format this as "MM/DD/YYYY")
+    let concertDate = moment(response.data[0].datetime).format('YYYY-MM-DD')
+    console.log("dateTime: "+ concertDate );
+    console.log(`This is the date: ${concertDate}`);
+
         });
 }
 
@@ -88,7 +93,7 @@ function spotify(){
     function AceofBass (){
         console.log("I am the ace of bass function");
     
-        spotSearch.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+        spotSearch.search({ type: 'artist', query: 'Ace of Bass' }, function(err, data) {
             if (err) {
               return console.log('Error occurred: ' + err);
             }
