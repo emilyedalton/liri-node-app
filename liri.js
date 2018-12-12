@@ -6,7 +6,8 @@ var keys = require("./keys.js");
 const fs = require("fs");
 //spotify key
 var spotSearch = new spotifyReq(keys.spotify)
-
+//
+let defaultFilm = "Mr. Nobody";
 
 //Take in user input 
 let askLiri = process.argv[2];
@@ -59,8 +60,6 @@ function concert() {
       //Venue location
 
       console.log(`This is the city and country of the venue: ${response.data[0].venue.city}, ${response.data[0].venue.country}`);
-
-
 
       //Date of the Event (use moment to format this as "MM/DD/YYYY")
       let concertDate = moment(response.data[0].datetime).format('YYYY-MM-DD')
@@ -132,11 +131,13 @@ function whatitSays() {
 
 function movie() {
   // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
-
-
+  if (value === undefined)
+  movie(defaultFilm);
+  else
   // Then run a request with axios to the OMDB API with the movie specified
   var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
 
+  
   // This line is just to help us debug against the actual URL.
   console.log(queryUrl);
 
@@ -163,6 +164,21 @@ function movie() {
 
     });
 }
+//In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
+//Make sure you append each command you run to the `log.txt` file. 
+fs.appendFile("log.txt", askLiri,function(err) {
+
+    // If an error was experienced we will log it.
+    if (err) {
+      console.log(err);
+    }
+  
+    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+    else {
+      console.log("Content Added!");
+    }
+  
+  });
 
 start();
