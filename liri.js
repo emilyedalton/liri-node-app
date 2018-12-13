@@ -7,7 +7,6 @@ const fs = require("fs");
 //spotify key
 var spotSearch = new spotifyReq(keys.spotify)
 //
-let defaultFilm = "Mr. Nobody";
 
 //Take in user input 
 let askLiri = process.argv[2];
@@ -26,10 +25,7 @@ function start() {
       spotify();
       break;
 
-    case 'play-nobody':
-      MrNobody();
-      break;
-     
+
       case 'movie-this':
       movie();
       break;
@@ -171,43 +167,6 @@ function whatitSays() {
   });
 }
 
-
-
-
-
-function MrNobody(){{
-    // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
-    
-    // Then run a request with axios to the OMDB API with the movie specified
-    var queryUrl = "http://www.omdbapi.com/?t=" + defaultFilm + "&y=&plot=short&apikey=trilogy";
-  
-    
-    // This line is just to help us debug against the actual URL.
-    console.log(queryUrl);
-  
-    axios.get(queryUrl).then(
-      function (response) {
-  
-        //movie title
-        console.log("\nTitle: " + response.data.Title);
-        // release year 
-        console.log("\nRelease Year: " + response.data.Year);
-        //IMDB Rating
-        console.log("\nIMDB Rating: " + response.data.imdbRating);
-        //Rotten Tomatoes Rating of the movie.
-        console.log("\nRotten Tomatoes Rating:" + response.data.Ratings[1].Value);
-        //Country where the movie was produced.
-        console.log("\nCountry of Production: " + response.data.Country);
-        //Language of the movie.
-        console.log("\nLanguage: " + response.data.Language);
-        // Plot of the movie.
-        console.log("\nPlot: " + response.data.Plot);
-        //Actors in the movie.
-        console.log("\nActors: " + response.data.Actors);
-  
-  
-      });
-  }}
 //In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
 //Make sure you append each command you run to the `log.txt` file. 
