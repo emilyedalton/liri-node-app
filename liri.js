@@ -95,10 +95,7 @@ function movie() {
     // Then run a request with axios to the OMDB API with the movie specified
     let queryUrl = `http://www.omdbapi.com/?t="${value}&y=&plot=short&apikey=trilogy`;
     
-    
-    
     // This line is just to help us debug against the actual URL.
-    console.log(queryUrl);
   
     axios.get(queryUrl).then(
       function (response, error) {

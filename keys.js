@@ -1,4 +1,3 @@
-console.log('this is loaded');
 
 exports.spotify = {
   id: 'dd89ea0e430a4df1ace60cc4afe6bf4b',
