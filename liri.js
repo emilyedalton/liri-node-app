@@ -1,8 +1,8 @@
 require("dotenv").config();
-var axios = require("axios");
-var moment = require("moment");
-var spotifyReq = require("node-spotify-api");
-var keys = require("./keys.js");
+const axios = require("axios");
+const moment = require("moment");
+const spotifyReq = require("node-spotify-api");
+const keys = require("./keys.js");
 const fs = require("fs");
 //spotify key
 var spotSearch = new spotifyReq(keys.spotify)
@@ -38,7 +38,7 @@ function start() {
 }
 function concert() {
 
-  var searchQ = 'https://rest.bandsintown.com/artists/' + value + '/events?app_id=codingbootcamp';
+  var searchQ = `https://rest.bandsintown.com/artists/${value}/events?app_id=codingbootcamp`;
   console.log(searchQ);
   //Name of the venue
   axios.get(searchQ).then(
@@ -46,7 +46,11 @@ function concert() {
       for (i = 0; i < response.data.length; i++) {
       }
       //Artist(s)
-      console.log(`\n\x1b[36mArtists(s):\n\x1b[0m\n\x1b[33m${response.data[0].venue.name}\x1b[0m`);
+      console.log(`\n\x1b[36mArtists(s):\n\x1b[0m\n\x1b[33m${response.data[0].lineup}\x1b[0m`);
+
+     //Venue
+
+      console.log(`\n\x1b[36mName of the Venue:\n\x1b[0m\n\x1b[33m${response.data[0].venue.name}\x1b[0m`);
 
       //Venue location
 
@@ -89,7 +93,7 @@ function movie() {
     }
     
     // Then run a request with axios to the OMDB API with the movie specified
-    var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
+    var queryUrl = `http://www.omdbapi.com/?t="${value}&y=&plot=short&apikey=trilogy`;
     
     
     
