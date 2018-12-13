@@ -170,9 +170,9 @@ fs.appendFile("log.txt", askLiri,function(err) {
       console.log(err);
     }
   
-    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+    // If no error is experienced, we'll log the phrase "Check out Log.txt to see all of the executd commands!" to our node console.
     else {
-      console.log("Content Added!");
+      console.log("\x1b[35mCheck out\x1b[0m \x1b[33mLog.txt\x1b[0m \x1b[36mto see\x1b[0m \x1b[32ma list\x1b[0m \x1b[35mof all\x1b[0m \x1b[34mof the \x1b[31mexecutd commands!\x1b");
     }
   
   });
