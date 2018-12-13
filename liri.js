@@ -38,34 +38,28 @@ function start() {
 }
 function concert() {
 
-  console.log("I am the bands in town function")
-
   var searchQ = 'https://rest.bandsintown.com/artists/' + value + '/events?app_id=codingbootcamp';
   console.log(searchQ);
   //Name of the venue
   axios.get(searchQ).then(
     function (response) {
-
-
-      console.log("length" + response.data.length);
       for (i = 0; i < response.data.length; i++) {
       }
-      //Venue location
-      console.log(`This is the venue: ${response.data[0].venue.name}`);
+      //Artist(s)
+      console.log(`\n\x1b[36mArtists(s):\n\x1b[0m\n\x1b[33m${response.data[0].venue.name}\x1b[0m`);
 
       //Venue location
 
-      console.log(`This is the city and country of the venue: ${response.data[0].venue.city}, ${response.data[0].venue.country}`);
+      console.log(`\n\x1b[36mVenue Location:\n\x1b[0m\n\x1b[33m${response.data[0].venue.city}, ${response.data[0].venue.country}\x1b[0m`);
 
       //Date of the Event (use moment to format this as "MM/DD/YYYY")
       let concertDate = moment(response.data[0].datetime).format('MM-DD-YYYY')
-      console.log(`This is the date: ${concertDate}`);
+      console.log(`\n\x1b[36mDate of the Event:\n\x1b[0m\n\x1b[33m${concertDate}\x1b[0m`);
 
     });
 }
 
 function spotify() {
-    console.log("I am the spotify function")
     if(value.trim().length === 0){
       value = "The Sign";
   }
@@ -75,15 +69,15 @@ function spotify() {
         return console.log('Error occurred: ' + err);
       }
       //Artist(s) name
-      console.log(`\nArtist:  \n${data.tracks.items[0].artists[0].name}`)
+      console.log(`\n\x1b[31mArtist(s):\n\x1b[0m\n\x1b[33m${data.tracks.items[0].artists[0].name}\x1b[0m`)
       // song
-      console.log("\nSong Title: " + (data.tracks.items[0].name));
+      console.log(`\n\x1b[31mThe song's name:\n\x1b[0m\n\x1b[33m${data.tracks.items[0].name}\x1b[0m`);
   
       // preview link
-      console.log("\nPreview Link: " + (data.tracks.items[0].preview_url));
+      console.log(`\n\x1b[31mPreview link of the song from Spotify:\n\x1b[0m\n\x1b[33m${data.tracks.items[0].preview_url}\x1b[0m`);
   
       // album
-      console.log("\nAlbum Title: " + (data.tracks.items[0].album.name));
+      console.log(`\n\x1b[31mThe album that the song is from:\n\x1b[0m\n\x1b[33m${data.tracks.items[0].album.name}\x1b[0m`);
   
     });
   }
@@ -110,21 +104,21 @@ function movie() {
                 }
   
         //movie title
-        console.log(`\n\x1b[45mTitle of the movie:\x1b[0m\n\x1b[33m${response.data.Title}\x1b[0m`);
+        console.log(`\n\x1b[35mTitle of the movie:\x1b[0m\n\x1b[33m${response.data.Title}\x1b[0m`);
         // release year 
-        console.log(`\n\x1b[45mYear the movie came out:\n\x1b[0m\x1b[33m${response.data.Year}\x1b[0m`);
+        console.log(`\n\x1b[35mYear the movie came out:\n\x1b[0m\x1b[33m${response.data.Year}\x1b[0m`);
         //IMDB Rating
-        console.log(`\n\n\x1b[45mIMDB Rating of the movie:\n\x1b[0m\x1b[33m${response.data.imdbRating}\x1b[0m`);
+        console.log(`\n\n\x1b[35mIMDB Rating of the movie:\n\x1b[0m\x1b[33m${response.data.imdbRating}\x1b[0m`);
         //Rotten Tomatoes Rating of the movie.
-        console.log(`\n\x1b[45mRotten Tomatoes Rating of the movie:\n\x1b[0m\x1b[33m${response.data.Ratings[1].Value}\x1b[0m`);
+        console.log(`\n\x1b[35mRotten Tomatoes Rating of the movie:\n\x1b[0m\x1b[33m${response.data.Ratings[1].Value}\x1b[0m`);
         //Country where the movie was produced.
-        console.log(`\n\x1b[45mCountry where the movie was produced:\n\x1b[0m\x1b[33m${response.data.Country}\x1b[0m`);
+        console.log(`\n\x1b[35mCountry where the movie was produced:\n\x1b[0m\x1b[33m${response.data.Country}\x1b[0m`);
         //Language of the movie.
-        console.log(`\n\x1b[45mLanguage of the movie:\n\x1b[0m\x1b[33m${response.data.Language}\x1b[0m`);
+        console.log(`\n\x1b[35mLanguage of the movie:\n\x1b[0m\x1b[33m${response.data.Language}\x1b[0m`);
         // Plot of the movie.
-        console.log(`\n\x1b[45mPlot of the movie:\n\x1b[0m\x1b[33m${response.data.Plot}\x1b[0m`);
+        console.log(`\n\x1b[35mPlot of the movie:\n\x1b[0m\x1b[33m${response.data.Plot}\x1b[0m`);
         //Actors in the movie.
-        console.log(`\n\x1b[45mActors in the movie:\n\x1b[0m\x1b[33m${response.data.Actors}\x1b[0m`);
+        console.log(`\n\x1b[35mActors in the movie:\n\x1b[0m\x1b[33m${response.data.Actors}\x1b[0m`);
   
     });
 }
@@ -133,7 +127,6 @@ function movie() {
 
 
 function whatitSays() {
-  console.log("I am the whatitSays function")
   // If the code experiences any errors it will log the error to the console.
   fs.readFile("random.txt", "utf8", function (error, data) {
 
