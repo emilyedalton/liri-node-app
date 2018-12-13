@@ -78,7 +78,7 @@ function spotify() {
   
       // album
       console.log(`\n\x1b[31mThe album that the song is from:\n\x1b[0m\n\x1b[33m${data.tracks.items[0].album.name}\x1b[0m`);
-  
+
     });
   }
 
@@ -163,7 +163,7 @@ function whatitSays() {
 //In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
 //Make sure you append each command you run to the `log.txt` file. 
-fs.appendFile("log.txt", askLiri,function(err) {
+fs.appendFile("log.txt", askLiri + " "+ value + ", "+ " ",function(err) {
 
     // If an error was experienced we will log it.
     if (err) {
@@ -172,7 +172,7 @@ fs.appendFile("log.txt", askLiri,function(err) {
   
     // If no error is experienced, we'll log the phrase "Check out Log.txt to see all of the executd commands!" to our node console.
     else {
-      console.log("\x1b[35mCheck out\x1b[0m \x1b[33mLog.txt\x1b[0m \x1b[36mto see\x1b[0m \x1b[32ma list\x1b[0m \x1b[35mof all\x1b[0m \x1b[34mof the \x1b[31mexecutd commands!\x1b");
+      console.log("\x1b[35mCheck out\x1b[0m \x1b[33mLog.txt\x1b[0m \x1b[36mto see\x1b[0m \x1b[32ma list\x1b[0m \x1b[35mof all\x1b[0m \x1b[34mof the \x1b[31mexecuted commands!\x1b");
     }
   
   });
