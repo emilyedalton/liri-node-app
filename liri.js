@@ -110,21 +110,21 @@ function movie() {
                 }
   
         //movie title
-        console.log("\nTitle: " + response.data.Title);
+        console.log(`\n\x1b[45mTitle of the movie:\x1b[0m\n\x1b[33m${response.data.Title}\x1b[0m`);
         // release year 
-        console.log("\nRelease Year: " + response.data.Year);
+        console.log(`\n\x1b[45mYear the movie came out:\n\x1b[0m\x1b[33m${response.data.Year}\x1b[0m`);
         //IMDB Rating
-        console.log("\nIMDB Rating: " + response.data.imdbRating);
+        console.log(`\n\n\x1b[45mIMDB Rating of the movie:\n\x1b[0m\x1b[33m${response.data.imdbRating}\x1b[0m`);
         //Rotten Tomatoes Rating of the movie.
-        console.log("\nRotten Tomatoes Rating:" + response.data.Ratings[1].Value);
+        console.log(`\n\x1b[45mRotten Tomatoes Rating of the movie:\n\x1b[0m\x1b[33m${response.data.Ratings[1].Value}\x1b[0m`);
         //Country where the movie was produced.
-        console.log("\nCountry of Production: " + response.data.Country);
+        console.log(`\n\x1b[45mCountry where the movie was produced:\n\x1b[0m\x1b[33m${response.data.Country}\x1b[0m`);
         //Language of the movie.
-        console.log("\nLanguage: " + response.data.Language);
+        console.log(`\n\x1b[45mLanguage of the movie:\n\x1b[0m\x1b[33m${response.data.Language}\x1b[0m`);
         // Plot of the movie.
-        console.log("\nPlot: " + response.data.Plot);
+        console.log(`\n\x1b[45mPlot of the movie:\n\x1b[0m\x1b[33m${response.data.Plot}\x1b[0m`);
         //Actors in the movie.
-        console.log("\nActors: " + response.data.Actors);
+        console.log(`\n\x1b[45mActors in the movie:\n\x1b[0m\x1b[33m${response.data.Actors}\x1b[0m`);
   
     });
 }
