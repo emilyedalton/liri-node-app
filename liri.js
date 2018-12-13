@@ -58,41 +58,41 @@ function concert() {
       console.log(`This is the city and country of the venue: ${response.data[0].venue.city}, ${response.data[0].venue.country}`);
 
       //Date of the Event (use moment to format this as "MM/DD/YYYY")
-      let concertDate = moment(response.data[0].datetime).format('YYYY-MM-DD')
+      let concertDate = moment(response.data[0].datetime).format('MM-DD-YYYY')
       console.log(`This is the date: ${concertDate}`);
 
     });
 }
 
 function spotify() {
-  console.log("I am the spotify function")
-  if(value.trim().length === 0){
-    value = "The Sign";
-
-  spotSearch.search({ type: 'track', query: value }, function (err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }
-    //Artist(s) name
-    console.log(`\nArtist:  \n${data.tracks.items[0].artists[0].name}`)
-    // song
-    console.log("\nSong Title: " + (data.tracks.items[0].name));
-
-    // preview link
-    console.log("\nPreview Link: " + (data.tracks.items[0].preview_url));
-
-    // album
-    console.log("\nAlbum Title: " + (data.tracks.items[0].album.name));
-
-  });
-}
-}
+    console.log("I am the spotify function")
+    if(value.trim().length === 0){
+      value = "The Sign";
+  }
+  
+    spotSearch.search({ type: 'track', query: value }, function (err, data) {
+      if (err) {
+        return console.log('Error occurred: ' + err);
+      }
+      //Artist(s) name
+      console.log(`\nArtist:  \n${data.tracks.items[0].artists[0].name}`)
+      // song
+      console.log("\nSong Title: " + (data.tracks.items[0].name));
+  
+      // preview link
+      console.log("\nPreview Link: " + (data.tracks.items[0].preview_url));
+  
+      // album
+      console.log("\nAlbum Title: " + (data.tracks.items[0].album.name));
+  
+    });
+  }
 
 function movie() {
     // Take the value and trim the extra whitespace from it. If the legnth is 0, change to Mr. Nobody
     if(value.trim().length === 0){
         value = "Mr. Nobody";
-  
+    }
     
     // Then run a request with axios to the OMDB API with the movie specified
     var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
@@ -128,7 +128,7 @@ function movie() {
   
     });
 }
-}
+
 
 
 
