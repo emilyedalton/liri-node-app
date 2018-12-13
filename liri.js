@@ -38,7 +38,7 @@ function start() {
 }
 function concert() {
 
-  var searchQ = `https://rest.bandsintown.com/artists/${value}/events?app_id=codingbootcamp`;
+  let searchQ = `https://rest.bandsintown.com/artists/${value}/events?app_id=codingbootcamp`;
   console.log(searchQ);
   //Name of the venue
   axios.get(searchQ).then(
@@ -93,7 +93,7 @@ function movie() {
     }
     
     // Then run a request with axios to the OMDB API with the movie specified
-    var queryUrl = `http://www.omdbapi.com/?t="${value}&y=&plot=short&apikey=trilogy`;
+    let queryUrl = `http://www.omdbapi.com/?t="${value}&y=&plot=short&apikey=trilogy`;
     
     
     
