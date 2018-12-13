@@ -5,7 +5,7 @@ const spotifyReq = require("node-spotify-api");
 const keys = require("./keys.js");
 const fs = require("fs");
 //spotify key
-var spotSearch = new spotifyReq(keys.spotify)
+let spotSearch = new spotifyReq(keys.spotify)
 //
 
 //Take in user input 
