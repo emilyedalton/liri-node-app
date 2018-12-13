@@ -70,6 +70,8 @@ function concert() {
 
 function spotify() {
   console.log("I am the spotify function")
+  if(value.trim().length === 0){
+    value = "The Sign";
 
   spotSearch.search({ type: 'track', query: value }, function (err, data) {
     if (err) {
@@ -88,9 +90,13 @@ function spotify() {
 
   });
 }
+}
 
 function movie() {
-    // Take a move with multiple words (ex: Forrest Gump) as a Node argument and retrieve the year it was created.
+    // Take the value and trim the extra whitespace from it. If the legnth is 0, change to Mr. Nobody
+    if(value.trim().length === 0){
+        value = "Mr. Nobody";
+  
     
     // Then run a request with axios to the OMDB API with the movie specified
     var queryUrl = "http://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy";
@@ -124,9 +130,10 @@ function movie() {
         //Actors in the movie.
         console.log("\nActors: " + response.data.Actors);
   
-  
-      });
-  }
+    });
+}
+}
+
 
 
 function whatitSays() {
