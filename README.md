@@ -10,8 +10,7 @@ LIRI uses three REST APIs to answer user questions about live music performances
 
 This app uses Axios to make http requests from node.js to the Bands in Town API, the Spotify API, and and the OMDB API. 
 
-After a user enters in one of three prompts, a switch statement is exectuted to call one of three functions that calls the spefified API and which responds with the information. 
-
+After a user enters in one of three prompts, a switch statement is exectuted calling one of four functions that makes the API request.
 ### concert-this
 ![](concert-this.gif)
 
@@ -41,9 +40,9 @@ Using node, Liri also reads commands from a text file:
 
 ![](do-what-it-says.gif)
 
-### do-what-it-says (differnt command) 
+### do-what-it-says (different command) 
 
-if the commnands within the file are changed, the program will return results specific to that command. 
+If the commnands within the file are changed, the program will return results specific to that command. 
 
 ![](do-what-it-says-diff-command.gif)
 
