@@ -35,6 +35,18 @@ After a user enters in one of three prompts, a switch statement is exectuted to 
 
 
 
+Using node, Liri also reads commands from a text file: 
+
+### do-what-it-says
+
+![](do-what-it-says.gif)
+
+### do-what-it-says (differnt command) 
+
+if the commnands within the file are changed, the program will return results specific to that command. 
+
+![](do-what-it-says-diff-command.gif)
+
 
 
 
