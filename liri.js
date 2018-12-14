@@ -25,7 +25,6 @@ function start() {
       spotify();
       break;
 
-
       case 'movie-this':
       movie();
       break;
@@ -65,7 +64,7 @@ function concert() {
 
 function spotify() {
     if(value.trim().length === 0){
-      value = "The Sign";
+      value = "All I Want for Christmas";
   }
   
     spotSearch.search({ type: 'track', query: value }, function (err, data) {
