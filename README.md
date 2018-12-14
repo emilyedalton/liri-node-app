@@ -34,7 +34,7 @@ After a user enters in one of three prompts, a switch statement is exectuted cal
 
 
 
-Using node, Liri also reads commands from a text file: 
+Using node, LIRI also reads commands from a text file: 
 
 ### do-what-it-says
 
