@@ -12,7 +12,30 @@ This app uses Axios to make http requests from node.js to the Bands in Town API,
 
 After a user enters in one of three prompts, a switch statement is exectuted to call one of three functions that calls the spefified API and which responds with the information. 
 
-### Concert-this
+### concert-this
+![](concert-this.gif)
+
+
+### spotify-this-song
+![](spotify-this-song.gif)
+
+
+
+### default search for spotify-this-song
+
+![](spotify-this-default.gif)
+
+### movie-this
+
+![](movie-this.gif)
+
+### movie-this default search
+
+![](movie-this-default.gif)
+
+
+
+
 
 
 
