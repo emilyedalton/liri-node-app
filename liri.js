@@ -56,7 +56,7 @@ function concert() {
             console.log(`\n\x1b[36mVenue Location:\n\x1b[0m\n\x1b[33m${response.data[0].venue.city}, ${response.data[0].venue.country}\x1b[0m`);
 
             //Date of the Event (use moment to format this as "MM/DD/YYYY")
-            let concertDate = moment(response.data[0].datetime).format('MM-DD-YYYY')
+            let concertDate = moment(response.data[0].datetime).format('MM/DD/YYYY')
             console.log(`\n\x1b[36mDate of the Event:\n\x1b[0m\n\x1b[33m${concertDate}\x1b[0m`);
 
         });
