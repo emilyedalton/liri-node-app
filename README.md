@@ -48,6 +48,7 @@ If the user types the command "movie-this" followed by the name of a film they g
 * Language of the movie 
 * Plot synopsis 
 * Actors in the movie 
+
 ![](movie-this.gif)
 
 ### movie-this default search
