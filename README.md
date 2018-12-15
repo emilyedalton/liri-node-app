@@ -8,7 +8,7 @@ LIRI (Language Intrepretation and Recognition Interface) is a command line node 
 LIRI uses three REST APIs to answer user questions about live music performances, information about specific songs, and information about specific films. 
 
 
-This app uses Axios to make http requests from node.js to the Bands in Town API, the Spotify API, and and the OMDB API. 
+This app uses [Axios](https://www.npmjs.com/package/axios) to make http requests from node.js to the Bands in Town API, the Spotify API, and and the OMDB API. 
 
 After a user enters in one of three prompts, a switch statement is exectuted calling one of four functions that makes the API request.
 ### concert-this
