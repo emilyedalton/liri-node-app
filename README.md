@@ -69,7 +69,7 @@ In the following example LIRI is reading the command "spotify-this-song I want i
 
 ### do-what-it-says (different command) 
 
-If the commnands within the file are changed, the program will return results specific to that command. In this case, "movie-this ghostbusters" 
+If the commands within the file are changed, the program will return results specific to that command. In this case, "movie-this ghostbusters" 
 
 ![](do-what-it-says-diff-command.gif)
 
