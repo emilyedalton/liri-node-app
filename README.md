@@ -76,6 +76,11 @@ If the commands within the file are changed, the program will return results spe
 Additionally, all of the users commands are logged to a file called "log.txt." This is logged at the top of the results for every query. 
 
 
+## API Documentation: 
+
+* [Bands in Town](https://app.swaggerhub.com/api/Bandsintown/PublicAPI/3.0.0)
+* [Spotify](https://developer.spotify.com/documentation/) 
+* [OMDB](http://www.omdbapi.com/)
 
 
 
